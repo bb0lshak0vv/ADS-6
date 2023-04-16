@@ -8,7 +8,6 @@ class TPQueue {
  private:
     T* arr;
     int last, first, count;
-   
  public:
     TPQueue() :first(0), last(0), count(0) { arr = new T[size]; }
     bool isEmpty() const {
@@ -33,7 +32,7 @@ class TPQueue {
             arr[last % size] = value;
             T temp = arr[x % size];
             while (arr[x % size].prior > \
-                arr[(x - 1) % size].prior && x > first) {
+              arr[(x - 1) % size].prior && x > first) {
                 temp = arr[x % size];
                 arr[x % size] = arr[(x - 1) % size];
                 arr[(x - 1) % size] = temp;
@@ -48,4 +47,4 @@ struct SYM {
   char ch;
   int prior;
 };
-#endif // INCLUDE_TPQUEUE_H_
+#endif  // INCLUDE_TPQUEUE_H_    
